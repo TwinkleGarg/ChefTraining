@@ -16,3 +16,19 @@ end
 describe port(80), :skip do
   it { should_not be_listening }
 end
+
+# This Tests if the user is present or not.
+describe user('User1') do
+	it { should exist }
+end
+  
+  
+describe package('clamav') do
+	it { should be_installed }
+end
+
+
+describe file('C:\cheftask\task6\testDirectory') do
+	it { should be_directory }
+	it { should be_owned_by 'User1' }
+end
